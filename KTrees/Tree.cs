@@ -11,7 +11,13 @@ namespace KTrees
             PrintRecursive(Root, "");
         }
 
-        void Remove()
+        public void PrintInfix()
+        {
+            PrintInfixRecursive(Root);
+            Console.WriteLine();
+        }
+
+        public void Remove()
         {
             Root = null;
         }
@@ -32,6 +38,22 @@ namespace KTrees
                 PrintRecursive(node.Right, newOffset);
                 PrintRecursive(node.Left, newOffset);
             }
+        }
+
+        private static void PrintInfixRecursive(Node node)
+        {
+            if (node == null)
+                return;
+
+            if (node.Left == null && node.Right == null)
+            {
+                Console.Write($"{node.Key} ");
+                return;
+            }
+
+            PrintInfixRecursive(node.Left);
+            Console.Write($"{node.Key} ");
+            PrintInfixRecursive(node.Right);
         }
 
         #region Sherlok
