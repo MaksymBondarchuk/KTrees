@@ -8,7 +8,7 @@ namespace KTrees
         {
             var keys = new List<int> { 5, 3, 4, 6, 6, 2, 7, 1, 8 };
 
-            var tree = new SearchTree();
+            var tree = new BalancedTree();
             tree.Add(keys);
             tree.Print();
         }

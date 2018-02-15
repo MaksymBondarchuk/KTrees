@@ -9,8 +9,15 @@ namespace KTrees
 		public Node Left { get; set; }
 		public Node Right { get; set; }
 
-	    public int HeightLeft { get; set; }
+	    #region Balanced
+	    public int Diff { get; set; }
+        #endregion
+
+        #region AVL
+        public int HeightLeft { get; set; }
 	    public int HeightRight { get; set; }
+        #endregion
+
 
         public void UpdateHeights()
 	    {
